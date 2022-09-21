@@ -1,9 +1,29 @@
 body{
-    background-color: rgb(1, 20, 1);
+    background-color: rgb(132, 175, 204);
 }
 h1 {
-    color: aliceblue;
+    color: rgb(0, 24, 46);
 }
-p {
-    color: blanchedalmond;
+
+button#draw {
+    width: 100px;
+    height: 40px
+}
+
+button#reset {
+    width: 100px;
+    height: 40px
+}
+h2.scoreBoard {
+    color: rgb(8, 20, 85);
+    font-size: 40px;
+    flex-wrap: wrap;
+}
+
+h2.playerScoreBoard {
+    color: white
+}
+
+h2.computerScoreBoard {
+    color: white;
 }

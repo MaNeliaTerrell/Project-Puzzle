@@ -11,12 +11,18 @@ const hpImages = [
     { image: "https://www.thestoreofrequirement.com.au/assets/alt_1_thumb/1247.jpg?20200714030613" },
 ]
 
+const playerScoreBoard = document.getElementById("playerScoreBoard")
+const computerScoreBoard = document.getElementById("computerScoreBoard")
+
+
 console.log(hpImages);
 const body = document.getElementsByTagName("body")
 const buttons = document.querySelectorAll(".buttons")
 const draw = document.querySelector("#draw")
 
-
+let computerScore = 0
+let playerScore = 0
+let winner = '';
 const div = document.querySelector("#set-of-cards")
 
 const getTwoImages = () => {
@@ -28,11 +34,15 @@ const getTwoImages = () => {
         img.src = card.image
         img.style.width = '100px'
         img.style.height = '150px'
+        img.style.border = "solid"
+        img.style.borderColor = "maroon"
+        img.style.margin = "5px"
+
         div.appendChild(img)
     }
     return arrayOne
-}
 
+}
 const playGame = () => {
     // Draw two cards for the player
     const playerCards = getTwoImages()
@@ -46,48 +56,32 @@ const playGame = () => {
     // else if, none gets matching cards, no one wins
     // else, player wins
 
-    let winner = '';
-    if (compCards[0] === compCards[1] && playerCards[0] === playerCards[1]) {
-        // console.log('It\'s a tie!');
+    if (compCards[0] == compCards[1] && playerCards[0] == playerCards[1]) {
+        console.log('It\'s a tie!');
         winner = 'It\'s a tie!'
     } else if (playerCards[0] !== playerCards[1] && compCards[0] !== compCards[1]) {
-        // console.log('Sorry, you both lost!');
+        console.log('Sorry, you both lost!');
         winner = 'Sorry, you both lost!'
-    } else if (compCards[0] === compCards[1]) {
-    //    console.log('Computer Scores!')
+    } else if (compCards[0] == compCards[1]) {
+        console.log('Computer Scores!')
         winner = 'Computer Scores'
+        computerScore += 1
+        computerScoreBoard.innerHTML = computerScore
+        console.log('Computer Score', computerScore)
     } else {
-        // console.log('Player Scores!');
-        winner = 'Computer Scores'
+        console.log('Player Scores!');
+        winner = 'Player Scores'
+        playerScore += 1
+        playerScoreBoard.innerHTML = playerScore
+        console.log('Player Score', playerScore)
     }
-return[playerCards, compCards, winner]
+    return [playerCards, compCards, winner]
+};
 
-}
-
-console.log(playGame());
+console.log('Winner', winner);
 draw.addEventListener('click', playGame)
 
-// Recording scores:
+//  const resetGame = () =>{
 
-
-const scoreTab = (results) => {
-const div = document.createElement('div')
-div.textContent =
-`Player: ${results[0]}
-Computer: ${results[1]}
-Winner: ${results[2]}`
-const winnerDiv = document.querySelector("#winner")
-winnerDiv.appendChild(div)
-console.log(div);
-};
-// console.log(scoreTab);
-
-// const startPlay = () => {
-//    const results = playGame()
-//     scoreTab(results)
-// } 
-
-// const resetGame = () => {
-// }
-// const reset = document.querySelector("#reset")
+//  }
 // reset.addEventListener('click', resetGame)
