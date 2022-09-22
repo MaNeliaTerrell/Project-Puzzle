@@ -11,19 +11,20 @@ const hpImages = [
     { image: "https://www.thestoreofrequirement.com.au/assets/alt_1_thumb/1247.jpg?20200714030613" },
 ]
 
-const playerScoreBoard = document.getElementById("playerScoreBoard")
-const computerScoreBoard = document.getElementById("computerScoreBoard")
+let playerScoreBoard = document.getElementById("playerScoreBoard")
+let computerScoreBoard = document.getElementById("computerScoreBoard")
+// const scoreBoard = document.getElementsByClassName('scoreBoard')
 
-
-console.log(hpImages);
-const body = document.getElementsByTagName("body")
-const buttons = document.querySelectorAll(".buttons")
+// console.log(hpImages);
+// const body = document.getElementsByTagName("body")
+// const buttons = document.querySelectorAll(".buttons")
 const draw = document.querySelector("#draw")
+const reset = document.querySelector("#reset")
 
 let computerScore = 0
 let playerScore = 0
 let winner = '';
-const div = document.querySelector("#set-of-cards")
+let div = document.querySelector("#set-of-cards")
 
 const getTwoImages = () => {
     const arrayOne = []
@@ -37,7 +38,6 @@ const getTwoImages = () => {
         img.style.border = "solid"
         img.style.borderColor = "maroon"
         img.style.margin = "5px"
-
         div.appendChild(img)
     }
     return arrayOne
@@ -45,16 +45,18 @@ const getTwoImages = () => {
 }
 const playGame = () => {
     // Draw two cards for the player
-    const playerCards = getTwoImages()
+    let playerCards = getTwoImages()
     console.log('Player Cards', playerCards);
     // Draw two cards for computer
-    const compCards = getTwoImages()
+    let compCards = getTwoImages()
     console.log('Computer Cards', compCards);
     // Check if cards match
     // if both drew matching cards, it's a tie
     // else if , computer cards match, computer wins;
     // else if, none gets matching cards, no one wins
     // else, player wins
+
+
 
     if (compCards[0] == compCards[1] && playerCards[0] == playerCards[1]) {
         console.log('It\'s a tie!');
@@ -76,12 +78,18 @@ const playGame = () => {
         console.log('Player Score', playerScore)
     }
     return [playerCards, compCards, winner]
+    
 };
 
-console.log('Winner', winner);
+// console.log('Winner', winner);
 draw.addEventListener('click', playGame)
+    
+const resetGame = () => {
+    div.innerHTML =''
+    playerScoreBoard.innerHTML = 0
+    computerScoreBoard.innerHTML = 0
+    // console.log('resetGame');
+    
+}
 
-//  const resetGame = () =>{
-
-//  }
-// reset.addEventListener('click', resetGame)
+reset.addEventListener('click', resetGame)
