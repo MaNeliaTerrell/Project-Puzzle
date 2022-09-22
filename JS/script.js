@@ -20,13 +20,14 @@ let computerScoreBoard = document.getElementById("computerScoreBoard")
 // const buttons = document.querySelectorAll(".buttons")
 const draw = document.querySelector("#draw")
 const reset = document.querySelector("#reset")
-
+let div = document.querySelector("#set-of-cards")
 let computerScore = 0
 let playerScore = 0
 let winner = '';
-let div = document.querySelector("#set-of-cards")
+
 
 const getTwoImages = () => {
+    
     const arrayOne = []
     for (let i = 0; i < 2; i++) {
         let card = hpImages[(Math.floor(Math.random() * hpImages.length))]
@@ -38,12 +39,18 @@ const getTwoImages = () => {
         img.style.border = "solid"
         img.style.borderColor = "maroon"
         img.style.margin = "5px"
+    
         div.appendChild(img)
     }
     return arrayOne
 
 }
 const playGame = () => {
+    if(div.children){
+        while (div.children.length > 0){
+           div.children[0].remove()
+    }
+    }
     // Draw two cards for the player
     let playerCards = getTwoImages()
     console.log('Player Cards', playerCards);
@@ -55,7 +62,6 @@ const playGame = () => {
     // else if , computer cards match, computer wins;
     // else if, none gets matching cards, no one wins
     // else, player wins
-
 
 
     if (compCards[0] == compCards[1] && playerCards[0] == playerCards[1]) {
