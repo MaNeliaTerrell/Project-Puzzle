@@ -74,7 +74,7 @@ const playGame = () => {
         playerScoreBoard.innerHTML = playerScore
         console.log('Player Score', playerScore)
     }
-  
+    
     function cardCollected (i){
     const sevenHorx = document.querySelector('.sevenhorcruxes')
     let img2 = document.createElement('img')
@@ -86,7 +86,6 @@ const playGame = () => {
     img2.style.borderColor = "gold"
     img2.style.margin = "5px"
     }
-
 
     if (playerScore === 5 || computerScore === 5){
         console.log('You earned the Helga Cup!');
@@ -135,7 +134,6 @@ const resetGame = () => {
     div.innerHTML =''
     playerScoreBoard.innerHTML = 0
     computerScoreBoard.innerHTML = 0
-    
     // console.log('resetGame');
 }
 reset.addEventListener('click', resetGame)
