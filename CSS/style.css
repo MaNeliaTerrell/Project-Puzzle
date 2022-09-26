@@ -1,29 +1,147 @@
+
+
+
 body{
-    background-color: rgb(132, 175, 204);
+    background: url(../Images/Hogwarts.jpg) no-repeat fixed; 
+    background-position-x: center;
+    background-size: cover
 }
 h1 {
-    color: rgb(0, 24, 46);
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-family:'Harry Potter', sans-serif;
+    font-stretch: expanded;
 }
 
+div.buttons {
+    display: inline;
+    align-items: center;
+    position: fixed;
+    top: 60%;
+    left: 45%;
+}
 button#draw {
     width: 100px;
     height: 40px
+    
 }
-
 button#reset {
     width: 100px;
     height: 40px
 }
-h2.scoreBoard {
-    color: rgb(8, 20, 85);
+
+div.gridContainer {
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 50px 90px 90px;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    grid-area: main;
+    
+}
+div.scoreBoard {
+    color: rgb(206, 226, 132);
+    display: grid;
     font-size: 40px;
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    background-color: rgba(65, 28, 13, 0.5);
+    text-align: center;
+    font-family: 'Papyrus';
+    font-weight: bold;
+}
+
+h2#playerScoreBoard {
+    color: rgb(106, 238, 227);
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 50px;
+    text-align: center;
+    background-color: rgba(65, 28, 13, 0.5);
+    font-family: 'Papyrus';
+    font-weight: bold;
+}
+
+h2#PlayerScore {
+    color: rgb(170, 241, 148);
+    font-size: 30px;
+    grid-column: 1;
+    grid-row: 3;
+    text-align: center;
+    background-color: rgba(65, 28, 13, 0.5);
+    font-family: 'Papyrus';
+    font-weight: bold;
+}
+
+h2#computerScoreBoard {
+    color: rgb(106, 238, 227);
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 50px;
+    text-align: center;
+    background-color: rgba(65, 28, 13, 0.5);
+    font-family: 'Papyrus';
+    font-weight: bold;
+}
+
+h2#ComputerScore {
+    color: rgb(170, 241, 148);
+    font-size: 30px;;
+    grid-column: 2;
+    grid-row: 3;
+    text-align: center;
+    background-color: rgba(65, 28, 13, 0.5);
+    font-family: 'Papyrus';
+    font-weight: bold;
+}
+
+div.cardsCollection {
+    font-size: 40px;
+    font-family: 'Papyrus';
+    position: fixed;
+    top: 70%;
+    left:5%;
+}
+
+div.set-of-cards {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+
 }
 
-h2.playerScoreBoard {
-    color: white
+div.sevenhorcruxes {
+    color: rgb(209, 200, 150);
+    font-size: 40px;
+    font-family:'Trebuchet MS';
+    display: grid;
+    grid-row: 1;
+    grid-template-columns: 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    position: fixed;
+    left: 5%;
+    top: 77%;
+
 }
 
-h2.computerScoreBoard {
-    color: white;
+audio {
+    position: fixed;
+    top: 90%;
+    left: 82%;
+}
+
+button#resetCardCollection {
+    width: 200px;
+    height: 40px;
+    position: fixed;
+    top: 95%;
+    left:5%;
 }

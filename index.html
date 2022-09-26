@@ -10,23 +10,40 @@
   <link rel="stylesheet" href="./CSS/style.css">
   <script src="./JS/script.js" defer></script>
   <title>Project Puzzle</title>
+  <link href="http://fonts.cdnfonts.com/css/harry-potter" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Project Puzzle</h1>
- 
-    <div class="scoreBoard">Scores</div>
-    <h2 id="playerScoreBoard">Player Score</h2>
-    <h2 id="computerScoreBoard">Computer Score</h2>
-   
-
-   <div class="buttons">
-    <button id="draw" style = font-size:larger>Draw!</button>
-    <button id="reset"style = font-size:larger>Reset</button>
+  <h1>Seven Horcruxes</h1>
+ <div class="gridContainer">
+  <div class="scoreBoard">Scores</div>
+    <h2 id="playerScoreBoard">0</h2>
+    <h2 id="computerScoreBoard">0</h2>
+    <h2 id="PlayerScore">Player Score</h2>
+    <h2 id="ComputerScore">Computer Score</h2>
   </div>
+  <br>
+  <br>
   <div id="set-of-cards"></div>
+  <br>
+  <div class="buttons">
+    <button id="draw"style = font-size:larger>Draw!</button>
+    <button id="reset" style = font-size:larger>Reset</button>
+    
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="cardsCollection" style="color: white">Cards Collected</div>
+  <div class="sevenhorcruxes"></div>
+  <button id="resetCardCollection"style = font-size:larger>Reset Collection</button>
+<br>
+<br>
   
-
+  <audio controls autoplay>
+    <source src="../Project Puzzle/Sound/Harry_Potter_Theme_Song_Hedwigs_Theme.mp3" type="audio/mpeg" 
+  </audio>
+  
 </body>
 
 </html>

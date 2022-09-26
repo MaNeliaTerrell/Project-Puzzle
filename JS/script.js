@@ -1,15 +1,14 @@
 
-
-
 const hpImages = [
-    { image: "https://pm1.narvii.com/6040/39f9068baceac545d7e81da88745e69e118b7ece_hq.jpg" },
-    { image: "https://m.media-amazon.com/images/I/71diVvqlkSL._AC_SX385_.jpg" },
-    { image: "https://shop.universalorlando.com/merchimages/p-hufflepuff-cup-1297606.jpg" },
-    { image: "https://i.etsystatic.com/25263772/r/il/5c33cf/2544440414/il_570xN.2544440414_786k.jpg" },
-    { image: "https://cdna.artstation.com/p/assets/images/images/018/885/272/large/gale-evangelista-1.jpg?1561101812" },
-    { image: "https://the-wizards-shop.com/1834-thickbox_default/basilisk-tooth-and-tom-riddle-diary.jpg" },
-    { image: "https://www.thestoreofrequirement.com.au/assets/alt_1_thumb/1247.jpg?20200714030613" },
+    {   image: "https://pm1.narvii.com/6040/39f9068baceac545d7e81da88745e69e118b7ece_hq.jpg" },
+    {  image: "https://m.media-amazon.com/images/I/71diVvqlkSL._AC_SX385_.jpg" },
+    {   image: "https://shop.universalorlando.com/merchimages/p-hufflepuff-cup-1297606.jpg" },
+    {   image: "https://i.etsystatic.com/25263772/r/il/5c33cf/2544440414/il_570xN.2544440414_786k.jpg" },
+    {   image: "https://cdna.artstation.com/p/assets/images/images/018/885/272/large/gale-evangelista-1.jpg?1561101812" },
+    {   image: "https://the-wizards-shop.com/1834-thickbox_default/basilisk-tooth-and-tom-riddle-diary.jpg" },
+    {   image: "https://www.thestoreofrequirement.com.au/assets/alt_1_thumb/1247.jpg?20200714030613" },
 ]
+// console.log(hpImages[2].image);
 
 let playerScoreBoard = document.getElementById("playerScoreBoard")
 let computerScoreBoard = document.getElementById("computerScoreBoard")
@@ -25,7 +24,6 @@ let computerScore = 0
 let playerScore = 0
 let winner = '';
 
-
 const getTwoImages = () => {
     
     const arrayOne = []
@@ -39,7 +37,6 @@ const getTwoImages = () => {
         img.style.border = "solid"
         img.style.borderColor = "maroon"
         img.style.margin = "5px"
-    
         div.appendChild(img)
     }
     return arrayOne
@@ -57,13 +54,7 @@ const playGame = () => {
     // Draw two cards for computer
     let compCards = getTwoImages()
     console.log('Computer Cards', compCards);
-    // Check if cards match
-    // if both drew matching cards, it's a tie
-    // else if , computer cards match, computer wins;
-    // else if, none gets matching cards, no one wins
-    // else, player wins
-
-
+    
     if (compCards[0] == compCards[1] && playerCards[0] == playerCards[1]) {
         console.log('It\'s a tie!');
         winner = 'It\'s a tie!'
@@ -83,19 +74,77 @@ const playGame = () => {
         playerScoreBoard.innerHTML = playerScore
         console.log('Player Score', playerScore)
     }
-    return [playerCards, compCards, winner]
-    
-};
+  
+    function cardCollected (i){
+    const sevenHorx = document.querySelector('.sevenhorcruxes')
+    let img2 = document.createElement('img')
+    sevenHorx.appendChild(img2)
+    img2.src = hpImages[i].image
+    img2.style.width = '100px'
+    img2.style.height = '150px'
+    img2.style.border = "solid"
+    img2.style.borderColor = "gold"
+    img2.style.margin = "5px"
+    }
 
+
+    if (playerScore === 5 || computerScore === 5){
+        console.log('You earned the Helga Cup!');
+        cardCollected(2) 
+        playerScore++
+        computerScore++
+    } else if(playerScore === 10 || computerScore === 10){
+        console.log('You earned Tom\'s Diary!');
+        cardCollected(5)
+        playerScore++
+        computerScore++
+    } else if(playerScore === 15 || computerScore === 15){
+        console.log('You earned Voldemort\'s Ring!');
+        cardCollected(6)
+        playerScore++
+        computerScore++
+    } else if(playerScore === 20 || computerScore === 20){
+        console.log('You earned Ravenclaw Diadem!');
+        cardCollected(4)
+        playerScore++
+        computerScore++
+    } else if(playerScore === 25 || computerScore === 25){
+        console.log('You earned the Slytherin Locket!');
+        cardCollected(3)
+        playerScore++
+        computerScore++
+    } else if(playerScore === 30 || computerScore === 30){
+        console.log('You earned Nagini!')
+        cardCollected(0)
+        playerScore++
+        computerScore++
+    } else if(playerScore === 35 || computerScore === 35){
+        console.log('You earned Harrry! You collected all the Seven Horcruxes!! Game over!')
+        cardCollected(1)
+        playerScore++
+        computerScore++
+    } else{
+        console.log('Keep Clicking!');
+    }
+    return [playerCards, compCards, winner]
+};
 // console.log('Winner', winner);
 draw.addEventListener('click', playGame)
-    
+
 const resetGame = () => {
     div.innerHTML =''
     playerScoreBoard.innerHTML = 0
     computerScoreBoard.innerHTML = 0
-    // console.log('resetGame');
     
+    // console.log('resetGame');
 }
-
 reset.addEventListener('click', resetGame)
+
+// sevenHorx = document.querySelector('.sevenhorcruxes')
+// const resetCards = document.querySelector("#resetCardCollection")
+
+// const resetCardCollection = () => {
+// // sevenHorx.innerHTML = ''
+// sevenHorx.remove()
+// }
+// resetCards.addEventListener('click', resetCardCollection)
