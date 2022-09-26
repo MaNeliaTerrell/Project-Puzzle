@@ -140,11 +140,11 @@ const resetGame = () => {
 }
 reset.addEventListener('click', resetGame)
 
-// sevenHorx = document.querySelector('.sevenhorcruxes')
-// const resetCards = document.querySelector("#resetCardCollection")
+sevenHorx = document.querySelector('.sevenhorcruxes')
+const resetCards = document.querySelector("#resetCardCollection")
 
-// const resetCardCollection = () => {
-// // sevenHorx.innerHTML = ''
-// sevenHorx.remove()
-// }
-// resetCards.addEventListener('click', resetCardCollection)
+const resetCardCollection = () => {
+// sevenHorx.innerHTML = ''
+sevenHorx.remove()
+}
+resetCards.addEventListener('click', resetCardCollection)

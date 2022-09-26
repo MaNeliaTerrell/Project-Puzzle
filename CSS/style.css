@@ -104,7 +104,7 @@ div.cardsCollection {
     font-size: 40px;
     font-family: 'Papyrus';
     position: fixed;
-    top: 70%;
+    top: 58%;
     left:5%;
 }
 
@@ -120,16 +120,12 @@ div.sevenhorcruxes {
     font-size: 40px;
     font-family:'Trebuchet MS';
     display: grid;
-    grid-row: 1;
     grid-template-columns: 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
-    grid-template-rows: 100%;
     align-items: center;
-    justify-content: center;
     justify-items: center;
-    position: fixed;
+    
+    top: 85%;
     left: 5%;
-    top: 77%;
-
 }
 
 audio {
@@ -137,7 +133,6 @@ audio {
     top: 90%;
     left: 82%;
 }
-
 button#resetCardCollection {
     width: 200px;
     height: 40px;
