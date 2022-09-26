@@ -11,7 +11,7 @@ h1 {
     font-size: 60px;
     text-align: center;
     margin: 0;
-    padding: 10px;
+    padding: 5px;
     font-family:'Harry Potter', sans-serif;
     font-stretch: expanded;
 }
@@ -104,7 +104,7 @@ div.cardsCollection {
     font-size: 30px;
     font-family: 'Papyrus';
     position: fixed;
-    top: 60%;
+    top: 57%;
     left:5%;
 }
 
@@ -116,8 +116,6 @@ div.set-of-cards {
 
 div.sevenhorcruxes {
     color: rgb(209, 200, 150);
-    font-size: 40px;
-    font-family:'Trebuchet MS';
     display: grid;
     grid-template-columns: 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
     align-items: center;
