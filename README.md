@@ -11,14 +11,6 @@ This game features the seven horcruxes from the Harry Potter movie. For every cl
 
 ## Images
 
-![](Images/Harry%20Potter.jpg)
-![](Images/Hogwarts.jpg)
-![](Images/Hufflepuff's%20cup.jpg)
-![](Images/Nagini.jpg)
-![](Images/Tom%20M%20Riddle%20diary.jpg)
-![](Images/Voldemort's%20ring.jpg)
-![](Images/Pendant%20Horcrux.jpg)
-![](Images/Ravenclaw%20Diadem.jpg)
 
 ## Sound
 
