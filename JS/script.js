@@ -13,7 +13,7 @@ const hpImages = [
 let playerScoreBoard = document.getElementById("playerScoreBoard")
 let computerScoreBoard = document.getElementById("computerScoreBoard")
 // const scoreBoard = document.getElementsByClassName('scoreBoard')
-
+let sevenHorx = document.querySelector('.sevenhorcruxes')
 // console.log(hpImages);
 // const body = document.getElementsByTagName("body")
 // const buttons = document.querySelectorAll(".buttons")
@@ -74,16 +74,16 @@ const playGame = () => {
         playerScoreBoard.innerHTML = playerScore
         console.log('Player Score', playerScore)
     }
-    
+
     function cardCollected (i){
-    const sevenHorx = document.querySelector('.sevenhorcruxes')
-    let img2 = document.createElement('img')
+    
+    const img2 = document.createElement('img')
     sevenHorx.appendChild(img2)
     img2.src = hpImages[i].image
     img2.style.width = '100px'
     img2.style.height = '150px'
     img2.style.border = "solid"
-    img2.style.borderColor = "gold"
+    img2.style.borderColor = "orange"
     img2.style.margin = "5px"
     }
 
@@ -118,7 +118,7 @@ const playGame = () => {
         playerScore++
         computerScore++
     } else if(playerScore === 35 || computerScore === 35){
-        console.log('You earned Harrry! You collected all the Seven Horcruxes!! Game over!')
+        console.log('You earned Harry! You collected all the Seven Horcruxes!! Game over!')
         cardCollected(1)
         playerScore++
         computerScore++
@@ -130,19 +130,16 @@ const playGame = () => {
 // console.log('Winner', winner);
 draw.addEventListener('click', playGame)
 
+const cardStack = document.querySelector('.cardStack')
+
 const resetGame = () => {
     div.innerHTML =''
     playerScoreBoard.innerHTML = 0
+    playerScore = 0
+    computerScore = 0
     computerScoreBoard.innerHTML = 0
-    // console.log('resetGame');
+    cardStack.removeChild(cardStack.firstChild)
+    cardStack.innerHTML = ''
 }
 reset.addEventListener('click', resetGame)
 
-sevenHorx = document.querySelector('.sevenhorcruxes')
-const resetCards = document.querySelector("#resetCardCollection")
-
-const resetCardCollection = () => {
-// sevenHorx.innerHTML = ''
-sevenHorx.remove()
-}
-resetCards.addEventListener('click', resetCardCollection)

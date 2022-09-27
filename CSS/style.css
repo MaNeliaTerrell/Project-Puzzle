@@ -2,12 +2,12 @@
 
 
 body{
-    background: url(../Images/Hogwarts.jpg) no-repeat fixed; 
+    background: url(../Images/Hogwarts3.jpg) no-repeat fixed; 
     background-position-x: center;
     background-size: cover
 }
 h1 {
-    color: white;
+    color: goldenrod;
     font-size: 60px;
     text-align: center;
     margin: 0;
@@ -20,23 +20,24 @@ div.buttons {
     display: inline;
     align-items: center;
     position: fixed;
-    top: 58%;
-    left: 45%;
+    top: 65%;
+    left: 43%;
 }
 button#draw {
     width: 100px;
     height: 40px
-    
+    position: fixed;
 }
 button#reset {
     width: 100px;
     height: 40px
+    position: fixed;
 }
 
 div.gridContainer {
     display: grid;
     grid-template-columns: 250px 250px;
-    grid-template-rows: 50px 90px 90px;
+    grid-template-rows: 50px 80px 80px;
     text-align: center;
     justify-content: center;
     align-content: center;
@@ -50,7 +51,7 @@ div.scoreBoard {
     font-size: 40px;
     grid-row: 1;
     grid-column: 1 / span 2;
-    background-color: rgba(65, 28, 13, 0.5);
+    background-color: rgba(15, 29, 51, 0.507); 
     text-align: center;
     font-family: 'Papyrus';
     font-weight: bold;
@@ -62,7 +63,7 @@ h2#playerScoreBoard {
     grid-row: 2;
     font-size: 50px;
     text-align: center;
-    background-color: rgba(65, 28, 13, 0.5);
+    background-color: rgba(15, 29, 51, 0.507); 
     font-family: 'Papyrus';
     font-weight: bold;
 }
@@ -73,7 +74,7 @@ h2#PlayerScore {
     grid-column: 1;
     grid-row: 3;
     text-align: center;
-    background-color: rgba(65, 28, 13, 0.5);
+    background-color: rgba(15, 29, 51, 0.507); 
     font-family: 'Papyrus';
     font-weight: bold;
 }
@@ -84,7 +85,7 @@ h2#computerScoreBoard {
     grid-row: 2;
     font-size: 50px;
     text-align: center;
-    background-color: rgba(65, 28, 13, 0.5);
+    background-color: rgba(15, 29, 51, 0.507); 
     font-family: 'Papyrus';
     font-weight: bold;
 }
@@ -95,7 +96,7 @@ h2#ComputerScore {
     grid-column: 2;
     grid-row: 3;
     text-align: center;
-    background-color: rgba(65, 28, 13, 0.5);
+    background-color: rgba(15, 29, 51, 0.507); 
     font-family: 'Papyrus';
     font-weight: bold;
 }
@@ -104,24 +105,63 @@ div.cardsCollection {
     font-size: 30px;
     font-family: 'Papyrus';
     position: fixed;
-    top: 57%;
+    top: 60%;
     left:5%;
 }
 
-div.set-of-cards {
+div#box {
+    display: grid;
+    height: 190px;
+    grid-template-columns: 6% 15% 15% 6%;
+    grid-template-rows: 170px 30px;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    justify-items: center;
+}
+
+div#set-of-cards {
+    display:contents;
+    
+}
+
+div#drawnCards {
     display: flex;
+    align-self: center;
     flex-direction: row;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    align-content: stretch;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 36em;
+    justify-items: center;
+    position: sticky;
+}
+div#player{
+    color: rgb(155, 245, 240);
+    font-size: 25px;
+}
+div#computer {
+    color: rgb(155, 245, 240);
+    font-size: 25px;
 }
 
 div.sevenhorcruxes {
     color: rgb(209, 200, 150);
     display: grid;
+    grid-row: 1;
     grid-template-columns: 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
     align-items: center;
     justify-items: center;
-    top: 92%;
-    left: 5%;
+    justify-content: center;
+    justify-self: center;
+    grid-area: auto;
+    margin-top: 55px;
 }
 
 audio {
