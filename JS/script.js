@@ -138,8 +138,11 @@ const resetGame = () => {
     playerScore = 0
     computerScore = 0
     computerScoreBoard.innerHTML = 0
-    cardStack.removeChild(cardStack.firstChild)
-    cardStack.innerHTML = ''
+    while (sevenHorx.firstChild) {
+    sevenHorx.removeChild(sevenHorx.firstChild)
+    }
+  
+    // cardStack.innerHTML = ''
 }
 reset.addEventListener('click', resetGame)
 
