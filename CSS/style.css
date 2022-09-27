@@ -5,6 +5,7 @@ body{
     background: url(../Images/Hogwarts3.jpg) no-repeat fixed; 
     background-position-x: center;
     background-size: cover
+    /* This is a random comment. */
 }
 h1 {
     color: goldenrod;
